@@ -5,7 +5,7 @@ import {
   LineChart,
   Palette,
   Shield,
-} from "lucide-react"
+} from "lucide-react";
 
 export const founders = [
   {
@@ -26,7 +26,7 @@ export const founders = [
     role: "Co-Founder & Frontend Developer",
     description:
       "A frontend engineer passionate about creating modern user experiences, premium interfaces, and scalable digital products that combine functionality with elegant design.",
-    imageSrc: "/leadership/Abdul.jpeg",
+    imageSrc: "/leadership/Abdul.png",
     imageAlt:
       "Professional portrait of AbdulSamad Muhammad Busari, Co-Founder and Frontend Developer at Tellz",
     linkedin: "https://linkedin.com/in/busarisamad",
@@ -34,7 +34,7 @@ export const founders = [
     github: "https://github.com/Dcoditor",
     reverse: true,
   },
-]
+];
 
 export const leadershipValues = [
   {
@@ -73,4 +73,4 @@ export const leadershipValues = [
       "Rigorous engineering standards, observability, and security are non-negotiable defaults.",
     icon: Shield,
   },
-]
+];
