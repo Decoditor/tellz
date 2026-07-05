@@ -1,8 +1,8 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { ProjectCover } from "@/components/shared/ProjectCover"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+import { ProjectCover } from "@/components/shared/ProjectCover";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export function ProjectCard({ project, index = 0, footer, className }) {
   return (
@@ -18,7 +18,11 @@ export function ProjectCard({ project, index = 0, footer, className }) {
       className={cn("h-full", className)}
     >
       <Card className="group flex h-full flex-col overflow-hidden border-white/[0.07] bg-tellz-bg/40 py-0 transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-2xl light:border-slate-200 light:bg-white light:hover:border-slate-300 light:hover:shadow-slate-300/40">
-        <ProjectCover key={project.coverSrc || project.title} src={project.coverSrc} alt={project.coverAlt}>
+        <ProjectCover
+          key={project.coverSrc || project.title}
+          src={project.coverSrc}
+          alt={project.coverAlt}
+        >
           <span className="inline-flex w-fit rounded-full border border-white/25 bg-black/15 px-3 py-1 text-xs font-medium backdrop-blur-sm">
             {project.industry}
           </span>
@@ -57,5 +61,5 @@ export function ProjectCard({ project, index = 0, footer, className }) {
         ) : null}
       </Card>
     </motion.div>
-  )
+  );
 }

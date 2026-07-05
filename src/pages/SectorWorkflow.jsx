@@ -1,21 +1,21 @@
-import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react"
-import { Link, Navigate, useParams } from "react-router-dom"
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link, Navigate, useParams } from "react-router-dom";
 
-import { Button } from "@/components/ui/button"
-import { getIndustryBySlug } from "@/data/industries"
-import { getSectorWorkflow } from "@/data/sectorWorkflows"
+import { Button } from "@/components/ui/button";
+import { getIndustryBySlug } from "@/data/industries";
+import { getSectorWorkflow } from "@/data/sectorWorkflows";
 
 export default function SectorWorkflow() {
-  const { slug } = useParams()
-  const industry = slug ? getIndustryBySlug(slug) : null
-  const workflow = slug ? getSectorWorkflow(slug) : null
+  const { slug } = useParams();
+  const industry = slug ? getIndustryBySlug(slug) : null;
+  const workflow = slug ? getSectorWorkflow(slug) : null;
 
   if (!industry || !workflow) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/" replace />;
   }
 
-  const Icon = industry.icon
+  const Icon = industry.icon;
 
   return (
     <>
@@ -120,18 +120,27 @@ export default function SectorWorkflow() {
           </ul>
 
           <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Button asChild size="lg" className="rounded-2xl shadow-lg shadow-tellz-accent/20 light:shadow-md light:shadow-slate-300/50">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-2xl shadow-lg shadow-tellz-accent/20 light:shadow-md light:shadow-slate-300/50"
+            >
               <Link to="/contact" className="gap-2">
                 Discuss this sector
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="secondary" className="rounded-2xl">
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="rounded-2xl"
+            >
               <Link to="/projects">See related work</Link>
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }

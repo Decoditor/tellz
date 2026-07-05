@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 export function SectionHeading({
   eyebrow,
@@ -12,7 +12,7 @@ export function SectionHeading({
   const alignClass =
     align === "left"
       ? "items-start text-left"
-      : "items-center text-center mx-auto"
+      : "items-center text-center mx-auto";
 
   return (
     <motion.div
@@ -20,7 +20,11 @@ export function SectionHeading({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={cn("mb-12 flex max-w-3xl flex-col gap-4 md:mb-16", alignClass, className)}
+      className={cn(
+        "mb-12 flex max-w-3xl flex-col gap-4 md:mb-16",
+        alignClass,
+        className,
+      )}
     >
       {eyebrow ? (
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-tellz-cyan light:text-blue-600">
@@ -36,5 +40,5 @@ export function SectionHeading({
         </p>
       ) : null}
     </motion.div>
-  )
+  );
 }

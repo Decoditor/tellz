@@ -1,16 +1,13 @@
-import { motion } from "framer-motion"
-import { ArrowRight, Calendar } from "lucide-react"
+import { motion } from "framer-motion";
+import { ArrowRight, Calendar } from "lucide-react";
 
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section
-      id="contact"
-      className="relative py-20 md:py-28 light:bg-slate-50"
-    >
+    <section id="contact" className="relative py-20 md:py-28 light:bg-slate-50">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -61,5 +58,5 @@ export function CTASection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

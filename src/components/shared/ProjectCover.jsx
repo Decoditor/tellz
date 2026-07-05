@@ -1,21 +1,21 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import { Skeleton } from "@/components/ui/skeleton"
-import { cn } from "@/lib/utils"
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 export function ProjectCover({ src, alt, className, children }) {
-  const hasSrc = Boolean(src?.trim())
-  const [loaded, setLoaded] = useState(false)
-  const [error, setError] = useState(!hasSrc)
+  const hasSrc = Boolean(src?.trim());
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(!hasSrc);
 
   function handleImgRef(el) {
-    if (!el) return
+    if (!el) return;
     if (el.complete && el.naturalHeight > 0) {
-      setLoaded(true)
+      setLoaded(true);
     }
   }
 
-  const showImage = hasSrc && loaded && !error
+  const showImage = hasSrc && loaded && !error;
 
   return (
     <div
@@ -39,8 +39,8 @@ export function ProjectCover({ src, alt, className, children }) {
           decoding="async"
           onLoad={() => setLoaded(true)}
           onError={() => {
-            setError(true)
-            setLoaded(false)
+            setError(true);
+            setLoaded(false);
           }}
           className={cn(
             "absolute inset-0 z-[1] size-full object-cover transition-opacity duration-500",
@@ -60,5 +60,5 @@ export function ProjectCover({ src, alt, className, children }) {
         </div>
       ) : null}
     </div>
-  )
+  );
 }

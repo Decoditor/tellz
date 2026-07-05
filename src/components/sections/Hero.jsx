@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
   Activity,
   ArrowRight,
@@ -7,18 +7,18 @@ import {
   ShieldCheck,
   Sparkles,
   Zap,
-} from "lucide-react"
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const trust = [
   { label: "Scalable Architecture", icon: ShieldCheck },
   { label: "Modern UI/UX", icon: Sparkles },
   { label: "Secure Systems", icon: Zap },
   { label: "Fast Delivery", icon: Activity },
-]
+];
 
 const float = {
   animate: {
@@ -30,7 +30,7 @@ const float = {
     repeat: Infinity,
     ease: "easeInOut",
   },
-}
+};
 
 export function Hero() {
   return (
@@ -60,7 +60,11 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.6,
+                delay: 0.05,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-6 text-balance text-4xl font-semibold tracking-tight text-tellz-text sm:text-5xl md:text-6xl light:text-slate-900"
             >
               Building Digital Solutions That Move Industries Forward
@@ -69,26 +73,44 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.55,
+                delay: 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-6 text-pretty text-lg leading-relaxed text-tellz-muted md:text-xl light:text-slate-600"
             >
-              We design and develop modern websites, scalable platforms, and powerful
-              software solutions that solve real-world problems across every sector.
+              We design and develop modern websites, scalable platforms, and
+              powerful software solutions that solve real-world problems across
+              every sector.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.55,
+                delay: 0.18,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <Button asChild size="lg" className="rounded-2xl px-8 shadow-lg shadow-tellz-accent/15 light:shadow-md light:shadow-slate-300/40">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-2xl px-8 shadow-lg shadow-tellz-accent/15 light:shadow-md light:shadow-slate-300/40"
+              >
                 <Link to="/contact" className="gap-2">
                   Start a Project
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="secondary" className="rounded-2xl px-8">
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="rounded-2xl px-8"
+              >
                 <Link to="/projects">View Our Work</Link>
               </Button>
             </motion.div>
@@ -96,7 +118,11 @@ export function Hero() {
             <motion.ul
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.5,
+                delay: 0.26,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-12 grid gap-3 sm:grid-cols-2"
             >
               {trust.map(({ label, icon: Icon }) => (
@@ -178,11 +204,15 @@ export function Hero() {
                       key={stat.k}
                       className="rounded-2xl border border-white/[0.06] bg-tellz-bg/40 p-4 light:border-slate-100 light:bg-slate-50"
                     >
-                      <p className="text-xs text-tellz-muted light:text-slate-500">{stat.k}</p>
+                      <p className="text-xs text-tellz-muted light:text-slate-500">
+                        {stat.k}
+                      </p>
                       <p className="mt-2 text-2xl font-semibold text-tellz-text light:text-slate-900">
                         {stat.v}
                       </p>
-                      <p className="text-[11px] text-tellz-muted light:text-slate-500">{stat.d}</p>
+                      <p className="text-[11px] text-tellz-muted light:text-slate-500">
+                        {stat.d}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -218,5 +248,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

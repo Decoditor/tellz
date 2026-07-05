@@ -1,28 +1,28 @@
-import { AnimatePresence, motion } from "framer-motion"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
-import { SectionHeading } from "@/components/shared/SectionHeading"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { testimonials } from "@/data/testimonials"
-import { cn } from "@/lib/utils"
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { testimonials } from "@/data/testimonials";
+import { cn } from "@/lib/utils";
 
 export function Testimonials() {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % testimonials.length)
-    }, 7000)
-    return () => window.clearInterval(id)
-  }, [])
+      setIndex((i) => (i + 1) % testimonials.length);
+    }, 7000);
+    return () => window.clearInterval(id);
+  }, []);
 
-  const active = testimonials[index]
+  const active = testimonials[index];
 
   const prev = () =>
-    setIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
-  const next = () => setIndex((i) => (i + 1) % testimonials.length)
+    setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
+  const next = () => setIndex((i) => (i + 1) % testimonials.length);
 
   return (
     <section
@@ -60,7 +60,11 @@ export function Testimonials() {
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
-            <div className="flex gap-1.5" role="tablist" aria-label="Testimonial slides">
+            <div
+              className="flex gap-1.5"
+              role="tablist"
+              aria-label="Testimonial slides"
+            >
               {testimonials.map((_, i) => (
                 <button
                   key={i}
@@ -125,5 +129,5 @@ export function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { SectionHeading } from "@/components/shared/SectionHeading"
-import { whyTellz } from "@/data/whyTellz"
-import { cn } from "@/lib/utils"
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { whyTellz } from "@/data/whyTellz";
+import { cn } from "@/lib/utils";
 
 export function WhyTellz() {
   return (
@@ -36,21 +36,24 @@ export function WhyTellz() {
                 </span>
               </div>
               <div className="mt-6 space-y-4">
-                {["Design systems", "API contracts", "Observability", "Docs & handoff"].map(
-                  (row, idx) => (
-                    <div
-                      key={row}
-                      className="flex items-center justify-between rounded-2xl border border-white/[0.06] bg-tellz-bg/50 px-4 py-3 light:border-slate-100 light:bg-slate-50"
-                    >
-                      <span className="text-sm text-tellz-muted light:text-slate-600">
-                        {row}
-                      </span>
-                      <span className="text-xs font-semibold text-tellz-text light:text-slate-900">
-                        {idx + 1}/4
-                      </span>
-                    </div>
-                  ),
-                )}
+                {[
+                  "Design systems",
+                  "API contracts",
+                  "Observability",
+                  "Docs & handoff",
+                ].map((row, idx) => (
+                  <div
+                    key={row}
+                    className="flex items-center justify-between rounded-2xl border border-white/[0.06] bg-tellz-bg/50 px-4 py-3 light:border-slate-100 light:bg-slate-50"
+                  >
+                    <span className="text-sm text-tellz-muted light:text-slate-600">
+                      {row}
+                    </span>
+                    <span className="text-xs font-semibold text-tellz-text light:text-slate-900">
+                      {idx + 1}/4
+                    </span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -91,5 +94,5 @@ export function WhyTellz() {
         </div>
       </div>
     </section>
-  )
+  );
 }

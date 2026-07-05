@@ -1,10 +1,10 @@
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-import { SectionHeading } from "@/components/shared/SectionHeading"
-import { Card, CardContent } from "@/components/ui/card"
-import { industries } from "@/data/industries"
-import { cn } from "@/lib/utils"
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Card, CardContent } from "@/components/ui/card";
+import { industries } from "@/data/industries";
+import { cn } from "@/lib/utils";
 
 const container = {
   hidden: { opacity: 0 },
@@ -12,7 +12,7 @@ const container = {
     opacity: 1,
     transition: { staggerChildren: 0.06, delayChildren: 0.05 },
   },
-}
+};
 
 const item = {
   hidden: { opacity: 0, y: 16 },
@@ -21,7 +21,7 @@ const item = {
     y: 0,
     transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
   },
-}
+};
 
 export function Industries() {
   return (
@@ -80,5 +80,5 @@ export function Industries() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

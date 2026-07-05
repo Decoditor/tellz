@@ -1,8 +1,8 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { SectionHeading } from "@/components/shared/SectionHeading"
-import { processSteps } from "@/data/process"
-import { cn } from "@/lib/utils"
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { processSteps } from "@/data/process";
+import { cn } from "@/lib/utils";
 
 export function Process() {
   return (
@@ -24,7 +24,7 @@ export function Process() {
           />
           <div className="grid gap-10 md:gap-12">
             {processSteps.map((step, index) => {
-              const isRight = index % 2 === 1
+              const isRight = index % 2 === 1;
               return (
                 <motion.div
                   key={step.title}
@@ -44,7 +44,9 @@ export function Process() {
                   <div
                     className={cn(
                       "flex gap-4 md:gap-4",
-                      isRight ? "md:justify-start lg:pl-16" : "md:justify-end lg:pr-16",
+                      isRight
+                        ? "md:justify-start lg:pl-16"
+                        : "md:justify-end lg:pr-16",
                     )}
                   >
                     <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-tellz-bg text-sm font-semibold text-tellz-cyan shadow-md shadow-black/40 light:border-slate-300 light:bg-slate-100 light:text-blue-700 light:shadow-sm light:shadow-slate-300/80">
@@ -69,11 +71,11 @@ export function Process() {
                   </div>
                   <div className="hidden md:block" aria-hidden />
                 </motion.div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

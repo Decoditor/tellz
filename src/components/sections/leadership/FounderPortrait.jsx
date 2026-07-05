@@ -1,22 +1,22 @@
-import { useRef, useState } from "react"
+import { useRef, useState } from "react";
 
-import { Skeleton } from "@/components/ui/skeleton"
-import { cn } from "@/lib/utils"
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 export function FounderPortrait({ src, alt, className }) {
-  const imgRef = useRef(null)
-  const [loaded, setLoaded] = useState(false)
-  const [error, setError] = useState(false)
+  const imgRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleImgRef(el) {
-    imgRef.current = el
-    if (!el) return
+    imgRef.current = el;
+    if (!el) return;
     if (el.complete && el.naturalHeight > 0) {
-      setLoaded(true)
+      setLoaded(true);
     }
   }
 
-  const show = loaded && !error
+  const show = loaded && !error;
 
   return (
     <div
@@ -44,8 +44,8 @@ export function FounderPortrait({ src, alt, className }) {
         decoding="async"
         onLoad={() => setLoaded(true)}
         onError={() => {
-          setError(true)
-          setLoaded(false)
+          setError(true);
+          setLoaded(false);
         }}
         className={cn(
           "relative z-[2] size-full object-cover object-top transition-opacity duration-500",
@@ -57,5 +57,5 @@ export function FounderPortrait({ src, alt, className }) {
         aria-hidden
       />
     </div>
-  )
+  );
 }

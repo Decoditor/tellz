@@ -1,37 +1,36 @@
-import { motion } from "framer-motion"
-import { ArrowUpRight } from "lucide-react"
-import { useMemo } from "react"
-import { Link, useSearchParams } from "react-router-dom"
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { useMemo } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 
-import { ProjectCard } from "@/components/shared/ProjectCard"
-import { SectionHeading } from "@/components/shared/SectionHeading"
-import { Button } from "@/components/ui/button"
-import { getProjectIndustries, projects } from "@/data/projects"
-import { cn } from "@/lib/utils"
+import { ProjectCard } from "@/components/shared/ProjectCard";
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Button } from "@/components/ui/button";
+import { getProjectIndustries, projects } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
-const ALL = "All"
+const ALL = "All";
 
 export default function Projects() {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const industries = useMemo(() => getProjectIndustries(projects), [])
-  const categories = useMemo(() => [ALL, ...industries], [industries])
+  const [searchParams, setSearchParams] = useSearchParams();
+  const industries = useMemo(() => getProjectIndustries(projects), []);
+  const categories = useMemo(() => [ALL, ...industries], [industries]);
 
-  const param = searchParams.get("category")
-  const activeCategory =
-    param && industries.includes(param) ? param : ALL
+  const param = searchParams.get("category");
+  const activeCategory = param && industries.includes(param) ? param : ALL;
 
   function setCategory(next) {
     if (next === ALL) {
-      setSearchParams({}, { replace: true })
+      setSearchParams({}, { replace: true });
     } else {
-      setSearchParams({ category: next }, { replace: true })
+      setSearchParams({ category: next }, { replace: true });
     }
   }
 
   const filtered =
     activeCategory === ALL
       ? projects
-      : projects.filter((p) => p.industry === activeCategory)
+      : projects.filter((p) => p.industry === activeCategory);
 
   return (
     <>
@@ -53,7 +52,11 @@ export default function Projects() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.55,
+              delay: 0.05,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="mt-5 text-balance text-4xl font-semibold tracking-tight text-tellz-text sm:text-5xl md:text-6xl light:text-slate-900"
           >
             Projects we&apos;ve shipped
@@ -61,11 +64,15 @@ export default function Projects() {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.5,
+              delay: 0.12,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-tellz-muted md:text-xl light:text-slate-600"
           >
-            Platforms, products, and interfaces across industries — filter by category to
-            find work closest to yours.
+            Platforms, products, and interfaces across industries — filter by
+            category to find work closest to yours.
           </motion.p>
         </div>
       </section>
@@ -86,7 +93,7 @@ export default function Projects() {
             aria-label="Filter by category"
           >
             {categories.map((cat) => {
-              const isActive = activeCategory === cat
+              const isActive = activeCategory === cat;
               return (
                 <Button
                   key={cat}
@@ -103,7 +110,7 @@ export default function Projects() {
                 >
                   {cat}
                 </Button>
-              )
+              );
             })}
           </div>
 
@@ -134,5 +141,5 @@ export default function Projects() {
         </div>
       </section>
     </>
-  )
+  );
 }

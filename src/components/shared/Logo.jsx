@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 export function Logo({ className, to = "/" }) {
   return (
@@ -13,5 +13,5 @@ export function Logo({ className, to = "/" }) {
     >
       <img src="/logo.png" alt="" className="w-16" />
     </Link>
-  )
+  );
 }
